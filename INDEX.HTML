@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="main-content">
+        <h1>Cardápio</h1>
+        <div class="cardapio">
+            <div class="prato">
+                <img src="1.jpg" alt="Bolo de creme com morango" width="300px">
+                <p>Bolo com creme belga e morango.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="2.jpg" alt="Brownie branco com morango">
+                <p>Brownie branco com chantily e morango.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="3.jpg" alt="Tortilhas de morango">
+                <p>Tortilhas de ninho nutela e morango.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="4.jpg" alt="Pão de mel de morango">
+                <p>Pão de mel rosa recheado de morango.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="5.jpg" alt="Pavê de morango">
+                <p>Pavê de bolachas creme e morango.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="6.jpg" alt="Bolo de ninho com morango">
+                <p>Bolo branco com ninho e morango.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="7.jpg" alt="Brownie vermelho com morango">
+                <p>Brownie vermelho com chantily e morango.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="8.jpg" alt="Cupcakes de morango">
+                <p>Cupcakes com chantily e morango.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="9.jpg" alt="Gelatina de morango">
+                <p>Gelatina e morango.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="10.jpg" alt="Bolo confeitado de morango">
+                <p>Bolo de suspiros chantily e morango.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Feito por Kauany Bueno</p>
+    </footer>
+
+    <script>
+        function lerDescricao(botao) {
+            window.speechSynthesis.cancel();
+            const descricaoImagem = botao.parentElement.querySelector('p').innerText;
+            lerTexto(descricaoImagem);
+        }
+        function lerTexto(texto) {
+            const mensagem = new SpeechSynthesisUtterance(texto);
+            window.speechSynthesis.speak(mensagem);
+        }
+    </script>
+</body>
+</html>
